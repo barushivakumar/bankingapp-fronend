@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/card.js";
 import { useNavigate } from "react-router-dom";
 import jwt from "jsonwebtoken";
-import { GoogleLogin } from 'react-google-login';
+
 const Login = () => {
   //shows input fields and hides them after from submitted
   const [show, setShow] = useState(true);
@@ -81,19 +81,7 @@ const LoginForm = props => {
         }
       });
   };
-  const responseGoogle = (response) => {
-    if (response.error === 'popup_closed_by_user') {
-      // Handle the error gracefully, such as by displaying a message to the user
-      // window.location.href='/'
-      console.log('Popup window was closed by user');
-    } else if (response.accessToken) {
-      // Call your API with the Google access token to authenticate the user
-      console.log('Access token:', response.accessToken);
-    } else {
-      // Handle any other errors that may occur
-      console.log('Unknown error occurred:', response);
-    }
-  }
+
   const enableSubmit = () => {
     if (email === "" || password === "") {
       setValidTransaction(false);
@@ -143,17 +131,7 @@ const LoginForm = props => {
         }}
       />
       <br />
-     {/* <a style={{textDecoration:'underline',fontSize:'12px'}}>sign in with google</a> */}
-     <GoogleLogin
-  clientId="15107265136-ii591gqnc1gsv0jdk6p6bhtk513kfoav.apps.googleusercontent.com"
-  buttonText="Sign in with Google"
-  onSuccess={responseGoogle}
-  onFailure={responseGoogle}
-  cookiePolicy={'single_host_origin'}
-  responseType='code'
-  prompt='select_account'
-  
-/>
+     <a style={{textDecoration:'underline',fontSize:'12px'}}>sign in with google</a>
       <button
         type="submit"
         className="form-control btn btn-light mb-1 mt-0"
