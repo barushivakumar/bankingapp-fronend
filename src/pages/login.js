@@ -58,7 +58,7 @@ const LoginForm = props => {
       return;
     }
     fetch(
-      `https://shiva-badbankbackend2.onrender.com/account/login/${email}/${password}`
+      `https://shiva-badbankbackend.onrender.com/account/login/${email}/${password}`
     )
       .then(response => response.text())
       .then(text => {

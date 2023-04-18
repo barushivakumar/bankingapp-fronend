@@ -8,7 +8,7 @@ const AllData = () => {
 
   useEffect(() => {
     // fetch user accounts from API
-    fetch(`https://shiva-badbankbackend2.onrender.com/account/find`, {
+    fetch(`https://shiva-badbankbackend.onrender.com/account/find`, {
       headers: {
         "x-access-token": localStorage.getItem("token")
       }

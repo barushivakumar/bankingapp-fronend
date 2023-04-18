@@ -61,7 +61,7 @@ const CreateForm = props => {
       alert("Password Requires a minimum of 8 Characters!");
       return;
     }
-    const url = `https://shiva-badbankbackend2.onrender.com/account/create/${name}/${email}/${password}`;
+    const url = `https://shiva-badbankbackend.onrender.com/account/create/${name}/${email}/${password}`;
     (async () => {
       const res = await fetch(url);
       const data = await res.json();

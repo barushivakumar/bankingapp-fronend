@@ -41,7 +41,7 @@ const Deposit = () => {
   const handleSubmit = event => {
     if (atmMode === "Deposit" && Number(amount) >= 0) {
       fetch(
-        `https://shiva-badbankbackend2.onrender.com/account/update/${amount}`,
+        `https://shiva-badbankbackend.onrender.com/account/update/${amount}`,
         {
           headers: {
             "x-access-token": localStorage.getItem("token")
