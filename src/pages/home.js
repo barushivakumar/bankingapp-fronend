@@ -8,16 +8,16 @@ const Home = () => {
    <Welcome/>
    <Card 
    className="home-page"
-   hdrcolor="greenyellow"
-   hdrtext="#282c34"
-   bodycolor="dodgerblue"
-   bodytext="#282c34"
-   header="Welcome to iBank"
-   title="Banking Made Easy"
+   hdrcolor="maroon"
+   hdrtext="white"
+   bodycolor="white"
+   bodytext="maroon"
+   header="Welcome to SHIVAMIT PRO-BANK"
+   title="Our bank provides Top-notch services"
    text="For all your internet Bankings needs!"
-   body={(<img src="bank.png" 
-            className="img-fluid w-75" 
-            alt="Bank"/>)}
+   body={(<div className='d-flex justify-content-center'><img src="bank.png" 
+   className="img-fluid w-75" 
+   alt="Bank"/></div>)}
    />
    </>
     );

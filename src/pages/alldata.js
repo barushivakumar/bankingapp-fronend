@@ -33,15 +33,15 @@ const AllData = () => {
   return (
     <>
       <Welcome />
-      <Card
+      <Card 
         className="withdrawal-page p-3"
-        hdrcolor="greenyellow"
-        hdrtext="#282c34"
-        bodycolor="dodgerblue"
+        hdrcolor="gray"
+        hdrtext="white"
+        bodycolor="white"
         bodytext="#282c34"
         header="All Data"
         body={
-          <table className="table">
+          <table className="table"  >
             <thead>
               <tr>
                 <th className="fs-6" scope="col">
