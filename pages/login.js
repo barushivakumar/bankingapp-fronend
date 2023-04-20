@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/card.js";
 import { useNavigate } from "react-router-dom";
 import jwt from "jsonwebtoken";
-
+import GoogleLogin from "react-google-login";
 const Login = () => {
   //shows input fields and hides them after from submitted
   const [show, setShow] = useState(true);
@@ -102,6 +102,15 @@ const LoginForm = props => {
     setPassword("");
     setValidTransaction(false);
   };
+  const handleGoogleLogin = (response) => {
+    console.log(response); // prints the response object
+    // handle the response here, e.g. send it to the backend to create a new user or authenticate an existing one
+  };
+
+  const handleGoogleLoginFailure = (response) => {
+    console.log(response); // prints the error object
+    // handle the error here, e.g. show an error message to the user
+  };
 
   return (
     <form>
@@ -137,6 +146,15 @@ const LoginForm = props => {
         disabled={!validTransaction}
         onClick={handleLogin}
       >
+       
+        <GoogleLogin
+          clientId="<YOUR_CLIENT_ID>"
+          buttonText="Login with Google"
+          onSuccess={handleGoogleLogin}
+          onFailure={handleGoogleLoginFailure}
+          cookiePolicy={"single_host_origin"}
+        />
+      
         Submit
       </button>
     </form>

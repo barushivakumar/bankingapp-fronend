@@ -2,7 +2,8 @@ import { useState } from "react";
 import Card from "../components/card.js";
 import { useNavigate } from "react-router-dom";
 import jwt from "jsonwebtoken";
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import Google from './google.js';
 const Login = () => {
   //shows input fields and hides them after from submitted
   const [show, setShow] = useState(true);
@@ -102,7 +103,15 @@ const LoginForm = props => {
     setPassword("");
     setValidTransaction(false);
   };
+  const handleGoogleLogin = (response) => {
+    console.log(response); // prints the response object
+    // handle the response here, e.g. send it to the backend to create a new user or authenticate an existing one
+  };
 
+  const handleGoogleLoginFailure = (response) => {
+    console.log(response); // prints the error object
+    // handle the error here, e.g. show an error message to the user
+  };
   return (
     <form>
       <label>Email address</label>
@@ -131,13 +140,17 @@ const LoginForm = props => {
         }}
       />
       <br />
-     <a style={{textDecoration:'underline',fontSize:'12px'}}>sign in with google</a>
+      <div className="d-flex justify-content-center align-item-center"><GoogleOAuthProvider clientId="776399895709-3ddui6f51u8capadvdlsh0nejmk2ph8f.apps.googleusercontent.com">
+          <Google />
+        </GoogleOAuthProvider></div>
+     {/* <a style={{textDecoration:'underline',fontSize:'12px'}}>sign in with google</a> */}
       <button
         type="submit"
         className="form-control btn btn-light mb-1 mt-0"
         disabled={!validTransaction}
         onClick={handleLogin}
       >
+         
         Submit
       </button>
     </form>
