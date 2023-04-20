@@ -14,7 +14,7 @@ const CreateAccount = () => {
     hdrtext="white"
     bodycolor="white"
     bodytext="maroon"
-    header="Login"
+    header="Create Account"
       status={status}
       body={
         show ? (
